@@ -1,0 +1,23 @@
+// 1st step : has to initialize by git init
+
+1. git init
+
+2. git add .
+
+3. git commit -m "Ajax CRUD Design Done"
+
+…or push an existing repository from the command line
+
+4. git remote add origin https://github.com/muhsinashoma/ajax_crud_practice.git
+git push -u origin master
+
+
+// 2nd step : continue this process
+
+1. git add .
+
+2. git commit -m "Create Database and db files"
+
+3. git push
+
+
