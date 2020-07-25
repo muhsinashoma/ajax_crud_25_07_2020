@@ -18,11 +18,12 @@
     <td><?php echo $all_student_data['name'];  ?></td>
     <td><?php echo $all_student_data['email'];  ?></td>
     <td><?php echo $all_student_data['cell'];  ?></td>
+<!--    <td><img src="media/students/--><?php //echo $all_student_data['photo']; ?><!--" alt=""></td>-->
     <td><img src="media/students/<?php echo $all_student_data['photo']; ?>" alt=""></td>
     <td>
         <a id="single_show" class="btn btn-sm btn-info" href="#">View</a>
         <a class="btn btn-sm btn-warning" href="#">Edit</a>
-        <a class="btn btn-sm btn-danger" href="#">Delete</a>
+        <a id="delete_student" student_id="<?php  echo $all_student_data['id'];  ?>" class="btn btn-sm btn-danger" href="#">Delete</a>
     </td>
 </tr>
 
