@@ -22,9 +22,7 @@ git push -u origin master
 
 ----------------------------------
 
-check last commit with 
-
-git log --oneline    
+git log --oneline            //To check or show last commit    
 
 
 // jQuery is shorterm picture(short picture) of JavaScript.

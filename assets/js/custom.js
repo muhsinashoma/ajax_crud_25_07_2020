@@ -8,15 +8,38 @@
 			return false;
 		});
 
-		//Show Single Student Data. access  only for same page
-		// $('a#single_show').click(function () {
-         //    $('#single_student_modal').modal('show');
-         //    return false;
-        // });
 
-      //Show Single Student Data. Document On function is used for accessibility from other page or other location
+
+      //Show Single Student Data.                        Document On function is used for accessibility from other page or other location
         $(document).on('click' , 'a#single_show', function () {
             $('#single_student_modal').modal('show');
+
+            let  show_id = $(this).attr('student_id');   //show_id
+
+			$.ajax({
+
+				url : 'inc/ajax/show_single_student.php',
+				data : { id : show_id},
+				method : "POST",
+				success : function (data) {
+
+					//alert(data);
+
+					let single_data = JSON.parse(data);   // By JSON.parse(data) we will convert data into object from string
+
+					//alert(single_data.name);
+
+					$('img#single_student_img').attr('src','media/students/' + single_data.photo);
+                	$('h2#single_name').text(single_data.name);
+                	$('td#single_name').text(single_data.name);
+                	$('td#single_email').text(single_data.email);
+                	$('td#single_cell').text(single_data.cell);
+
+				}
+
+			});
+
+
 
              return false;    //for removing # sing from url
         });
@@ -116,6 +139,12 @@
 
 
 
+
+        //Show Single Student Data. access  only for same page
+        // $('a#single_show').click(function () {
+        //    $('#single_student_modal').modal('show');
+        //    return false;
+        // });
 
 
 
