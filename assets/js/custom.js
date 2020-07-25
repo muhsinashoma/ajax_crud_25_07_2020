@@ -35,13 +35,9 @@
 						//alert(data);
 						$('form#add_student_form')[0].reset();
 						$('#student_add_modal').modal('hide');
-                        $('.mess-all').html(data);                       //$('.mess').html(data);  It is used for modal page
+                        $('.mess-all').html(data);               //$('.mess').html(data);  It is used for modal page
 
-
-						// $('form#add_student_form')[0].reset();
-						// $('#student_add_modal').modal('hide');
-						// $('.mess-all').html(data);
-						// allStudentData();
+                        allStudentData();                        // after inserting information, it will show update data without page reloading through allStudentData()
 
 					}
 				});
@@ -53,6 +49,20 @@
 		});
 
 
+// Show All Student Data
+		function allStudentData() {
+            $.ajax({
+            	url : 'inc/ajax/show_all.php',
+            	success : function (data) {
+            		//alert(data);
+            		$('tbody#all_students_data').html(data);
+               }
+
+            });
+
+        }
+
+	  allStudentData();   //It is used repeatedly for instand check up of value and report change and getting update data
 
 
 
