@@ -84,24 +84,33 @@
 
 			let delete_id = $(this).attr('student_id');   //alert(delete_id);
 
-			$.ajax({
-				url : 'inc/ajax/delete_student.php',
+			let conf = confirm('Are You Sure to Delete it');
 
-				data : {id : delete_id},
+			if(conf == true){
+                $.ajax({
+                    url : 'inc/ajax/delete_student.php',
 
-				method : "POST",
+                    data : {id : delete_id},
 
-				success : function (data) {
+                    method : "POST",
 
-                   // alert(delete_id);
+                    success : function (data) {
 
-                    $('.mess-all').html('<p class="alert alert-success">Student Data Deleted Successfully ! <button class="close" data-dismiss="alert">&times;</button></p>');
+                        // alert(delete_id);
 
-                    allStudentData();
-                }
+                        $('.mess-all').html('<p class="alert alert-success">Student Data Deleted Successfully ! <button class="close" data-dismiss="alert">&times;</button></p>');
 
-			});
-			return false;
+                        allStudentData();
+                    }
+
+                });
+			}else{
+				return false;
+			}
+
+
+
+			return false;             //removing # sign from href tag
         });
 
 

@@ -20,6 +20,11 @@ git push -u origin master
 
 3. git push
 
+----------------------------------
+
+check last commit with 
+
+git log --oneline    
 
 
 // jQuery is shorterm picture(short picture) of JavaScript.
